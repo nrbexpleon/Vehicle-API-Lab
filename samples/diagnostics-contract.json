@@ -1,0 +1,16 @@
+{
+  "name": "Vehicle Diagnostics Session API",
+  "version": "1.0.0",
+  "protocol": "REST",
+  "operation": "POST /vehicle/diagnostics/session",
+  "requestSchema": "{ sessionType: string, testerId: string }",
+  "responseSchema": "{ sessionId: string, expiresAt: string }",
+  "successCode": 201,
+  "invalidCode": 400,
+  "maxLatencyMs": 100,
+  "timingCritical": true,
+  "authenticationRequired": true,
+  "idempotent": false,
+  "versionCompatibility": true,
+  "boundaries": ["minimum session timeout", "maximum tester identifier length"]
+}
